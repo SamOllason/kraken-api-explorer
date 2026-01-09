@@ -169,7 +169,7 @@ export function Dashboard({ onInfoClick, onTariffClick, visitedConcepts }: Dashb
           Built with React, TypeScript, and XState — the same tech stack used by Octopus Energy.
         </p>
         <a
-          href="https://github.com/yourusername/kraken-explorer#readme"
+          href="https://github.com/SamOllason/kraken-api-explorer#readme"
           target="_blank"
           rel="noopener noreferrer"
           style={{

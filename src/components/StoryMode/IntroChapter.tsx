@@ -155,7 +155,7 @@ const IntroChapter: React.FC<IntroChapterProps> = ({ onNext }) => {
           🐙 An interactive tool to help you understand how to work with Kraken's APIs.
         </p>
         <a
-          href="https://github.com/yourusername/kraken-explorer#readme"
+          href="https://github.com/SamOllason/kraken-api-explorer#readme"
           target="_blank"
           rel="noopener noreferrer"
           style={{
