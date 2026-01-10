@@ -2,6 +2,8 @@
 
 An interactive visual guide to understanding energy APIs and account data. Built as a portfolio project showcasing modern React development practices.
 
+**[🚀 Live Demo](https://samollason.github.io/kraken-api-explorer/)**
+
 ![React](https://img.shields.io/badge/React-18-blue?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)
 ![XState](https://img.shields.io/badge/XState-v5-orange)
