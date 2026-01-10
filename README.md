@@ -1,6 +1,6 @@
 # 🐙 Kraken Explorer
 
-An interactive visual guide to understanding energy APIs and account data. Built as a portfolio project showcasing modern React development practices.
+An interactive visual guide to understanding [Kraken's energy APIs](https://developer.octopus.energy/graphql/) and account data. Built as a portfolio project showcasing modern React development practices.
 
 **[🚀 Live Demo](https://samollason.github.io/kraken-api-explorer/)**
 
