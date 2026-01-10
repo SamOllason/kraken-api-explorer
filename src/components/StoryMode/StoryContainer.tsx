@@ -17,46 +17,40 @@ const ApiProgressBar: React.FC<{ explored: number; total: number }> = ({ explore
   return (
     <div style={{
       position: 'fixed',
-      bottom: 20,
-      left: 20,
+      bottom: 12,
+      left: '50%',
+      transform: 'translateX(-50%)',
       background: 'rgba(24, 24, 32, 0.95)',
-      padding: '0.75rem 1rem',
-      borderRadius: 12,
+      padding: '0.4rem 0.75rem',
+      borderRadius: 10,
       boxShadow: '0 2px 16px #0006',
       zIndex: 1000,
+      maxWidth: 'calc(100vw - 24px)',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      fontSize: 'clamp(0.6rem, 2vw, 0.75rem)',
     }}>
+      <span style={{ color: '#888', whiteSpace: 'nowrap' }}>API Concepts</span>
       <div style={{
-        fontSize: '0.7rem',
-        textTransform: 'uppercase',
-        letterSpacing: 1,
-        color: '#888',
-        marginBottom: 6,
+        width: 'clamp(60px, 15vw, 100px)',
+        height: 5,
+        background: '#2a2a36',
+        borderRadius: 3,
+        overflow: 'hidden',
+        flexShrink: 0,
       }}>
-        API Concepts Explored
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <div style={{
-          width: 120,
-          height: 6,
-          background: '#2a2a36',
+          width: `${percentage}%`,
+          height: '100%',
+          background: 'linear-gradient(90deg, #A855F7, #F59E42)',
           borderRadius: 3,
-          overflow: 'hidden',
-        }}>
-          <div style={{
-            width: `${percentage}%`,
-            height: '100%',
-            background: 'linear-gradient(90deg, #A855F7, #F59E42)',
-            borderRadius: 3,
-            transition: 'width 0.3s ease',
-          }} />
-        </div>
-        <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#A855F7' }}>
-          {percentage}%
-        </span>
+          transition: 'width 0.3s ease',
+        }} />
       </div>
-      <div style={{ fontSize: '0.75rem', color: '#666', marginTop: 4 }}>
-        {explored} / {total} concepts
-      </div>
+      <span style={{ fontWeight: 600, color: '#A855F7', whiteSpace: 'nowrap' }}>
+        {percentage}%
+      </span>
     </div>
   );
 };
@@ -122,15 +116,16 @@ const StoryContainer: React.FC = () => {
   };
 
   return (
-    <div style={{ minHeight: '100vh', paddingBottom: 100 }}>
+    <div style={{ minHeight: '100vh', paddingBottom: 80 }}>
       {/* Chapter Title Banner */}
       <div style={{
         background: 'linear-gradient(180deg, rgba(168, 85, 247, 0.15) 0%, transparent 100%)',
-        padding: '1rem 2rem',
+        padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem)',
+        paddingTop: 'clamp(3rem, 8vw, 4rem)',
         textAlign: 'center',
       }}>
         <div style={{
-          fontSize: '0.75rem',
+          fontSize: '0.7rem',
           textTransform: 'uppercase',
           letterSpacing: 2,
           color: '#A855F7',
@@ -140,7 +135,7 @@ const StoryContainer: React.FC = () => {
         </div>
         <h1 style={{
           margin: 0,
-          fontSize: '1.5rem',
+          fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
           fontWeight: 700,
           color: '#fff',
         }}>
@@ -149,7 +144,7 @@ const StoryContainer: React.FC = () => {
       </div>
 
       {/* Navigation */}
-      <div style={{ maxWidth: 650, margin: '0 auto', padding: '0 1.5rem' }}>
+      <div style={{ maxWidth: 650, margin: '0 auto', padding: '0 0.75rem' }}>
         <ChapterNav
           currentChapter={currentChapter}
           completedChapters={completedChapters}

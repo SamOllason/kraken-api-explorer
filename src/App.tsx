@@ -38,12 +38,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <div style={{ position: 'absolute', top: 16, right: 16, zIndex: 100 }}>
+      <div style={{ position: 'absolute', top: 12, right: 12, left: 12, zIndex: 100, display: 'flex', justifyContent: 'flex-end' }}>
         <button
           onClick={() => setShowStoryMode((v) => !v)}
           style={{
-            padding: showStoryMode ? '0.6rem 1.5rem' : '0.75rem 1.75rem',
-            fontSize: showStoryMode ? '1rem' : '1.1rem',
+            padding: showStoryMode ? '0.5rem 1rem' : '0.6rem 1.25rem',
+            fontSize: 'clamp(0.8rem, 2.5vw, 1.1rem)',
             background: showStoryMode ? '#A855F7' : 'linear-gradient(135deg, #A855F7 0%, #F59E42 100%)',
             color: '#fff',
             border: 'none',
@@ -53,9 +53,10 @@ function App() {
             boxShadow: showStoryMode ? '0 2px 8px #A855F733' : '0 4px 20px rgba(168, 85, 247, 0.4)',
             transition: 'all 0.2s',
             animation: showStoryMode ? 'none' : 'pulse 2s infinite',
+            whiteSpace: 'nowrap',
           }}
         >
-          {showStoryMode ? '← Back to Dashboard' : '🎓 Start Guided Learning'}
+          {showStoryMode ? '← Back' : '🎓 Guided Learning'}
         </button>
         {!showStoryMode && (
           <style>{`

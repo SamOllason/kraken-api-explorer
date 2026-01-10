@@ -76,19 +76,21 @@ const TariffSegment: React.FC<TariffSegmentProps> = ({
       flexDirection: 'column',
       alignItems: 'center',
       cursor: 'pointer',
-      padding: '0.75rem 1rem',
+      padding: 'clamp(0.4rem, 2vw, 0.75rem) clamp(0.5rem, 2vw, 1rem)',
       borderRadius: 8,
       background: isActive ? `${color}20` : 'transparent',
       border: `2px solid ${isActive ? color : '#333'}`,
       transition: 'all 0.2s ease',
+      minWidth: 0,
     }}
   >
     <div style={{
       fontFamily: 'monospace',
-      fontSize: '1.5rem',
+      fontSize: 'clamp(1rem, 4vw, 1.5rem)',
       fontWeight: 700,
       color: isActive ? color : '#888',
       marginBottom: 4,
+      wordBreak: 'break-all',
     }}>
       {value}
     </div>
@@ -199,15 +201,15 @@ const UnderstandingTariffChapter: React.FC<UnderstandingTariffChapterProps> = ({
   return (
     <div style={{
       maxWidth: 700,
-      margin: '2rem auto',
-      padding: '2.5rem 2rem',
+      margin: '1rem auto',
+      padding: 'clamp(1rem, 4vw, 2.5rem) clamp(0.75rem, 3vw, 2rem)',
       background: 'rgba(24, 24, 32, 0.98)',
       borderRadius: 16,
       color: '#fff',
       boxShadow: '0 2px 24px #0008',
     }}>
       {/* Chapter intro */}
-      <h2 style={{ fontWeight: 800, fontSize: '1.7rem', marginBottom: 8 }}>
+      <h2 style={{ fontWeight: 800, fontSize: 'clamp(1.2rem, 4vw, 1.7rem)', marginBottom: 8 }}>
         Chapter 3: Understanding Your Tariff
       </h2>
       <p style={{ color: '#888', marginBottom: 24 }}>
@@ -364,8 +366,10 @@ const UnderstandingTariffChapter: React.FC<UnderstandingTariffChapterProps> = ({
               background: '#0d0d14',
               borderRadius: 6,
               fontFamily: 'monospace',
-              fontSize: '0.8rem',
+              fontSize: 'clamp(0.65rem, 2vw, 0.8rem)',
               color: '#58A6FF',
+              wordBreak: 'break-all',
+              overflowWrap: 'break-word',
             }}>
               📡 API Path: {currentExplanation.apiPath}
             </div>
@@ -407,8 +411,9 @@ const UnderstandingTariffChapter: React.FC<UnderstandingTariffChapterProps> = ({
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-          gap: 8,
+          gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
+          gap: 6,
+          fontSize: 'clamp(0.7rem, 2vw, 0.85rem)',
         }}>
           {Object.entries(REGION_NAMES).map(([code, name]) => (
             <div

@@ -14,7 +14,8 @@ interface DashboardProps {
 const DashboardContainer = styled.main`
   max-width: 1200px;
   margin: 0 auto;
-  padding: ${theme.spacing.xl};
+  padding: clamp(0.75rem, 3vw, ${theme.spacing.xl});
+  padding-top: clamp(3.5rem, 10vw, ${theme.spacing.xl});
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing.lg};
@@ -25,7 +26,7 @@ const WelcomeHeader = styled.header`
 `;
 
 const WelcomeTitle = styled.h1`
-  font-size: ${theme.fontSizes['3xl']};
+  font-size: clamp(1.5rem, 5vw, ${theme.fontSizes['3xl']});
   font-weight: 700;
   margin-bottom: ${theme.spacing.xs};
 
@@ -149,12 +150,12 @@ export function Dashboard({ onInfoClick, onTariffClick, visitedConcepts }: Dashb
         background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(245, 158, 66, 0.1))',
         border: '1px solid rgba(168, 85, 247, 0.2)',
         borderRadius: 12,
-        padding: '1.25rem 1.5rem',
+        padding: 'clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 3vw, 1.5rem)',
         marginBottom: theme.spacing.md,
       }}>
         <p style={{
           margin: '0 0 8px 0',
-          fontSize: '1rem',
+          fontSize: 'clamp(0.85rem, 2.5vw, 1rem)',
           color: '#fff',
           lineHeight: 1.5,
         }}>
@@ -166,7 +167,7 @@ export function Dashboard({ onInfoClick, onTariffClick, visitedConcepts }: Dashb
           fontSize: '0.85rem',
           color: theme.colors.textSecondary,
         }}>
-          Built with React, TypeScript, and XState — the same tech stack used by Octopus Energy.
+          Built with React, TypeScript, and XState — the same tech stack used by Kraken.
         </p>
         <a
           href="https://github.com/SamOllason/kraken-api-explorer#readme"
@@ -237,7 +238,7 @@ export function Dashboard({ onInfoClick, onTariffClick, visitedConcepts }: Dashb
         </Card>
 
         {/* Property Card */}
-        <Card style={{ gridColumn: 'span 2' }}>
+        <Card>
           <CardHeader>
             <CardTitle>
               <span>🏠</span>

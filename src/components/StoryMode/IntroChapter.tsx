@@ -12,8 +12,8 @@ const IntroChapter: React.FC<IntroChapterProps> = ({ onNext }) => {
     <div
       style={{
         maxWidth: 600,
-        margin: '2rem auto',
-        padding: '2.5rem 2rem',
+        margin: '1rem auto',
+        padding: 'clamp(1rem, 4vw, 2.5rem) clamp(0.75rem, 3vw, 2rem)',
         background: 'rgba(24, 24, 32, 0.98)',
         borderRadius: 16,
         boxShadow: '0 2px 24px #0008',
@@ -29,27 +29,27 @@ const IntroChapter: React.FC<IntroChapterProps> = ({ onNext }) => {
 
       <h1 style={{
         fontWeight: 800,
-        fontSize: '2.2rem',
-        marginBottom: '1.2rem',
+        fontSize: 'clamp(1.5rem, 5vw, 2.2rem)',
+        marginBottom: '1rem',
         color: '#fff',
       }}>
         Welcome to Guided Learning!
       </h1>
 
-      <p style={{ fontSize: '1.1rem', marginBottom: 12, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)', marginBottom: 12, lineHeight: 1.6 }}>
         Meet <b style={{ color: '#A855F7' }}>Sam</b> (that's you!) and your loyal dog{' '}
         <b style={{ color: '#F59E42' }}>Obi</b>.<br />
         Together, you're about to embark on a year-long journey as an energy customer
         with Octopus Energy's Kraken platform.
       </p>
 
-      <p style={{ fontSize: '1.1rem', marginBottom: 12, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)', marginBottom: 12, lineHeight: 1.6 }}>
         You'll face real-life scenarios: receiving bills, switching tariffs,
         moving home, and even joining energy-saving events. Along the way, you'll
         learn how the Kraken API works behind the scenes.
       </p>
 
-      <p style={{ fontSize: '1.1rem', marginBottom: 12, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)', marginBottom: 12, lineHeight: 1.6 }}>
         <span role="img" aria-label="info">💡</span> Click the{' '}
         <span style={{
           display: 'inline-flex',

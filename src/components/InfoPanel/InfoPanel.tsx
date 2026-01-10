@@ -62,7 +62,8 @@ const PanelTitle = styled.h2`
 const PanelContent = styled.div`
   flex: 1;
   overflow-y: auto;
-  padding: ${theme.spacing.lg};
+  overflow-x: hidden;
+  padding: clamp(${theme.spacing.md}, 3vw, ${theme.spacing.lg});
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing.xl};
@@ -126,12 +127,14 @@ const SegmentLabel = styled.span`
 
 const ApiPath = styled.div`
   font-family: ${theme.fonts.mono};
-  font-size: ${theme.fontSizes.sm};
+  font-size: clamp(0.7rem, 2.5vw, ${theme.fontSizes.sm});
   color: ${theme.colors.accentBlue};
   background: ${theme.colors.background};
   padding: ${theme.spacing.sm} ${theme.spacing.md};
   border-radius: ${theme.radii.md};
   border: 1px solid ${theme.colors.surfaceBorder};
+  word-break: break-all;
+  overflow-wrap: break-word;
 `;
 
 const RelatedConcepts = styled.div`

@@ -42,24 +42,25 @@ const ChapterNav: React.FC<ChapterNavProps> = ({
         onClick={onPrevious}
         disabled={!canGoPrevious}
         style={{
-          padding: '0.5rem 1rem',
+          padding: '0.4rem 0.6rem',
           background: canGoPrevious ? '#333' : '#1a1a24',
           color: canGoPrevious ? '#fff' : '#555',
           border: 'none',
           borderRadius: 8,
           cursor: canGoPrevious ? 'pointer' : 'not-allowed',
           fontWeight: 600,
-          fontSize: '0.9rem',
+          fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)',
           display: 'flex',
           alignItems: 'center',
-          gap: 6,
+          gap: 4,
+          whiteSpace: 'nowrap',
         }}
       >
-        <span style={{ fontSize: '1.1rem' }}>←</span> Previous
+        <span style={{ fontSize: '1rem' }}>←</span> <span className="nav-text">Previous</span>
       </button>
 
       {/* Chapter Dots */}
-      <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+      <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexShrink: 1, overflow: 'hidden' }}>
         {chapters.map((chapter) => {
           const isCurrent = chapter.id === currentChapter;
           const isCompleted = completedChapters.includes(chapter.id);
@@ -72,9 +73,10 @@ const ChapterNav: React.FC<ChapterNavProps> = ({
               disabled={!isAccessible}
               title={`${chapter.number}. ${chapter.title}`}
               style={{
-                width: isCurrent ? 32 : 12,
-                height: 12,
-                borderRadius: isCurrent ? 6 : '50%',
+                width: isCurrent ? 24 : 10,
+                height: 10,
+                minWidth: isCurrent ? 24 : 10,
+                borderRadius: isCurrent ? 5 : '50%',
                 background: isCurrent
                   ? 'linear-gradient(90deg, #A855F7, #F59E42)'
                   : isCompleted
@@ -86,6 +88,7 @@ const ChapterNav: React.FC<ChapterNavProps> = ({
                 cursor: isAccessible ? 'pointer' : 'not-allowed',
                 transition: 'all 0.2s ease',
                 padding: 0,
+                flexShrink: 0,
               }}
             />
           );
@@ -97,7 +100,7 @@ const ChapterNav: React.FC<ChapterNavProps> = ({
         onClick={onNext}
         disabled={!canGoNext}
         style={{
-          padding: '0.5rem 1rem',
+          padding: '0.4rem 0.6rem',
           background: canGoNext
             ? 'linear-gradient(90deg, #A855F7 60%, #F59E42 100%)'
             : '#1a1a24',
@@ -106,13 +109,14 @@ const ChapterNav: React.FC<ChapterNavProps> = ({
           borderRadius: 8,
           cursor: canGoNext ? 'pointer' : 'not-allowed',
           fontWeight: 600,
-          fontSize: '0.9rem',
+          fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)',
           display: 'flex',
           alignItems: 'center',
-          gap: 6,
+          gap: 4,
+          whiteSpace: 'nowrap',
         }}
       >
-        Next <span style={{ fontSize: '1.1rem' }}>→</span>
+        <span className="nav-text">Next</span> <span style={{ fontSize: '1rem' }}>→</span>
       </button>
     </div>
   );

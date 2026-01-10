@@ -6,7 +6,7 @@ export const Card = styled.div`
   background: ${theme.colors.surface};
   border: 1px solid ${theme.colors.surfaceBorder};
   border-radius: ${theme.radii.lg};
-  padding: ${theme.spacing.lg};
+  padding: clamp(${theme.spacing.md}, 3vw, ${theme.spacing.lg});
   transition: all ${theme.transitions.normal};
 
   &:hover {
@@ -106,6 +106,9 @@ export const ClickableValue = styled.span`
   display: inline-flex;
   align-items: center;
   gap: ${theme.spacing.sm};
+  flex-wrap: wrap;
+  word-break: break-all;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
 
   &:hover {
     background: ${theme.colors.primary}15;
@@ -120,9 +123,11 @@ export const CodeBlock = styled.pre`
   border-radius: ${theme.radii.md};
   padding: ${theme.spacing.md};
   font-family: ${theme.fonts.mono};
-  font-size: ${theme.fontSizes.sm};
+  font-size: clamp(0.7rem, 2vw, ${theme.fontSizes.sm});
   overflow-x: auto;
   line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
 
   code {
     color: ${theme.colors.textSecondary};
