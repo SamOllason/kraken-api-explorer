@@ -151,6 +151,7 @@ export function Dashboard({ onInfoClick, onTariffClick, visitedConcepts }: Dashb
         border: '1px solid rgba(168, 85, 247, 0.2)',
         borderRadius: 12,
         padding: 'clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 3vw, 1.5rem)',
+        paddingRight: 'clamp(1rem, 15vw, 1.5rem)',
         marginBottom: theme.spacing.md,
       }}>
         <p style={{
