@@ -152,7 +152,7 @@ export function Dashboard({ onInfoClick, onTariffClick, visitedConcepts }: Dashb
         borderRadius: 12,
         padding: 'clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 3vw, 1.5rem)',
         paddingRight: 'clamp(1rem, 15vw, 1.5rem)',
-        marginBottom: theme.spacing.md,
+        marginBottom: theme.spacing.xl,
       }}>
         <p style={{
           margin: '0 0 8px 0',
