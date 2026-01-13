@@ -15,7 +15,7 @@ const DashboardContainer = styled.main`
   max-width: 1200px;
   margin: 0 auto;
   padding: clamp(0.75rem, 3vw, ${theme.spacing.xl});
-  padding-top: clamp(3.5rem, 10vw, ${theme.spacing.xl});
+  padding-top: clamp(5rem, 12vw, 6rem);
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing.lg};
@@ -152,7 +152,7 @@ export function Dashboard({ onInfoClick, onTariffClick, visitedConcepts }: Dashb
         borderRadius: 12,
         padding: 'clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 3vw, 1.5rem)',
         paddingRight: 'clamp(1rem, 15vw, 1.5rem)',
-        marginBottom: theme.spacing.xl,
+        marginBottom: 'clamp(2rem, 8vw, 8rem)',
       }}>
         <p style={{
           margin: '0 0 8px 0',
